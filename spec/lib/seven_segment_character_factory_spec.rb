@@ -1,4 +1,3 @@
-
 require_relative '../spec_helper.rb'
 
 describe "The Seven Segment Character Factory" do
@@ -36,21 +35,21 @@ describe "The Seven Segment Character Factory" do
 
   describe "Single Character Generation" do
     it "returns SevenSegmentCharacterNil for an unknown character" do
-      character_factory.get_character("Z").should be_an_instance_of SevenSegmentCharacterNil
+      character_factory.get_character("Z").should == SevenSegmentCharacter.charNil
     end
 
-    { "0" => SevenSegmentCharacter0,
-      "1" => SevenSegmentCharacter1,
-      "2" => SevenSegmentCharacter2,
-      "3" => SevenSegmentCharacter3,
-      "4" => SevenSegmentCharacter4,
-      "5" => SevenSegmentCharacter5,
-      "6" => SevenSegmentCharacter6,
-      "7" => SevenSegmentCharacter7,
-      "8" => SevenSegmentCharacter8,
-      "9" => SevenSegmentCharacter9}.each do |input_char, expected_class|
-      it "returns #{expected_class} for #{input_char}" do
-        character_factory.get_character(input_char).should be_an_instance_of expected_class
+    { "0" => SevenSegmentCharacter.char0,
+      "1" => SevenSegmentCharacter.char1,
+      "2" => SevenSegmentCharacter.char2,
+      "3" => SevenSegmentCharacter.char3,
+      "4" => SevenSegmentCharacter.char4,
+      "5" => SevenSegmentCharacter.char5,
+      "6" => SevenSegmentCharacter.char6,
+      "7" => SevenSegmentCharacter.char7,
+      "8" => SevenSegmentCharacter.char8,
+      "9" => SevenSegmentCharacter.char9}.each do |input_char, expected_seven_segment_char|
+      it "returns #{expected_seven_segment_char} for #{input_char}" do
+        character_factory.get_character(input_char).should == expected_seven_segment_char
       end
     end
   end
