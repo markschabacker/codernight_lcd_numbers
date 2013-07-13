@@ -1,3 +1,5 @@
+require_relative 'seven_segment_segment.rb'
+
 class SevenSegmentCharacter
   @@charNil = SevenSegmentCharacter.new
   @@char0 = SevenSegmentCharacter.new
