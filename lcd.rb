@@ -1,1 +1,1 @@
-require_relative 'lcd_number_formatter.rb'
+require_relative 'lib/seven_segment_display_formatter.rb'
