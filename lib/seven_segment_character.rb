@@ -10,16 +10,16 @@ class SevenSegmentCharacter
   end
 
   @@charNil = SevenSegmentCharacter.new
-  @@char0 = SevenSegmentCharacter.new
-  @@char1 = SevenSegmentCharacter.new
-  @@char2 = SevenSegmentCharacter.new
-  @@char3 = SevenSegmentCharacter.new
-  @@char4 = SevenSegmentCharacter.new
-  @@char5 = SevenSegmentCharacter.new
-  @@char6 = SevenSegmentCharacter.new
-  @@char7 = SevenSegmentCharacter.new
-  @@char8 = SevenSegmentCharacter.new
-  @@char9 = SevenSegmentCharacter.new
+  @@char0 = SevenSegmentCharacter.new([SevenSegmentSegment.top, SevenSegmentSegment.top_left, SevenSegmentSegment.top_right, SevenSegmentSegment.bottom_left, SevenSegmentSegment.bottom_right, SevenSegmentSegment.bottom])
+  @@char1 = SevenSegmentCharacter.new([SevenSegmentSegment.top_right, SevenSegmentSegment.bottom_right])
+  @@char2 = SevenSegmentCharacter.new([SevenSegmentSegment.top, SevenSegmentSegment.top_right, SevenSegmentSegment.middle, SevenSegmentSegment.bottom_left, SevenSegmentSegment.bottom])
+  @@char3 = SevenSegmentCharacter.new([SevenSegmentSegment.top, SevenSegmentSegment.top_right, SevenSegmentSegment.middle, SevenSegmentSegment.bottom_right, SevenSegmentSegment.bottom])
+  @@char4 = SevenSegmentCharacter.new([SevenSegmentSegment.top_left, SevenSegmentSegment.top_right, SevenSegmentSegment.middle, SevenSegmentSegment.bottom_right])
+  @@char5 = SevenSegmentCharacter.new([SevenSegmentSegment.top, SevenSegmentSegment.top_left, SevenSegmentSegment.middle, SevenSegmentSegment.bottom_right, SevenSegmentSegment.bottom])
+  @@char6 = SevenSegmentCharacter.new([SevenSegmentSegment.top, SevenSegmentSegment.top_left, SevenSegmentSegment.middle, SevenSegmentSegment.bottom_left, SevenSegmentSegment.bottom_right, SevenSegmentSegment.bottom])
+  @@char7 = SevenSegmentCharacter.new([SevenSegmentSegment.top, SevenSegmentSegment.top_right, SevenSegmentSegment.bottom_right])
+  @@char8 = SevenSegmentCharacter.new([SevenSegmentSegment.top, SevenSegmentSegment.top_left, SevenSegmentSegment.top_right, SevenSegmentSegment.middle, SevenSegmentSegment.bottom_left, SevenSegmentSegment.bottom_right, SevenSegmentSegment.bottom])
+  @@char9 = SevenSegmentCharacter.new([SevenSegmentSegment.top, SevenSegmentSegment.top_left, SevenSegmentSegment.top_right, SevenSegmentSegment.middle, SevenSegmentSegment.bottom_right, SevenSegmentSegment.bottom])
 
   def self.charNil
     @@charNil
