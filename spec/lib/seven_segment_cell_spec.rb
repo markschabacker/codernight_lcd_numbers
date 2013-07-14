@@ -13,8 +13,8 @@ describe "Seven Segment Cells" do
   end
 
   describe "character_at_index" do
-    (0...SevenSegmentCell::CELL_COLUMNS).each do |x|
-      (0...SevenSegmentCell::CELL_ROWS).each do |y|
+    (0...SevenSegmentCell.cell_columns).each do |x|
+      (0...SevenSegmentCell.cell_rows).each do |y|
         it "returns ' ' if the character does not have any segments (#{x}, #{y})" do
           cell.character_at_index(x, y).should == " "
         end

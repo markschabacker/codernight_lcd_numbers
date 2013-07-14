@@ -13,11 +13,11 @@ class SevenSegmentDisplayFormatter
     end
 
     output = ""
-    (0...SevenSegmentCell::CELL_ROWS).each do |y|
+    (0...SevenSegmentCell.cell_rows).each do |y|
       column_multiplier = use_multiplier_for_row(y) ? multiplier : 1
       1.upto(column_multiplier).each do
         cells.each_with_index do |cell, index|
-          (0...SevenSegmentCell::CELL_COLUMNS).each do |x|
+          (0...SevenSegmentCell.cell_columns).each do |x|
             row_multiplier = use_multiplier_for_column(x) ? multiplier : 1
             1.upto(row_multiplier).each do
               output << cell.character_at_index(x,y)

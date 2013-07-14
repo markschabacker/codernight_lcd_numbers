@@ -54,8 +54,8 @@ describe "The Seven Segment Display Formatter" do
       SevenSegmentCell.stub(:new).with(:char_1).and_return(ret_cell)
 
       counter = 0
-      (0...SevenSegmentCell::CELL_ROWS).each do |y|
-        (0...SevenSegmentCell::CELL_COLUMNS).each do |x|
+      (0...SevenSegmentCell.cell_rows).each do |y|
+        (0...SevenSegmentCell.cell_columns).each do |x|
           ret_cell.should_receive(:character_at_index).with(x,y).and_return("#{counter += 1}_")
         end
       end
@@ -81,9 +81,9 @@ describe "The Seven Segment Display Formatter" do
       SevenSegmentCell.stub(:new).with(:char_2).and_return(ret_cell_2)
 
       counter = 0
-      (0...SevenSegmentCell::CELL_ROWS).each do |y|
+      (0...SevenSegmentCell.cell_rows).each do |y|
         [ret_cell_1, ret_cell_2].each do |ret_cell|
-          (0...SevenSegmentCell::CELL_COLUMNS).each do |x|
+          (0...SevenSegmentCell.cell_columns).each do |x|
             ret_cell.should_receive(:character_at_index).with(x,y).and_return("#{counter += 1}_")
           end
         end
@@ -109,9 +109,9 @@ describe "The Seven Segment Display Formatter" do
       ret_cell = Object.new
       SevenSegmentCell.stub(:new).with(:char_1).and_return(ret_cell)
 
-      (0...SevenSegmentCell::CELL_ROWS).each do |y|
-        (0...SevenSegmentCell::CELL_COLUMNS).each do |x|
-          ret_cell.stub(:character_at_index).with(x,y).and_return("#{1 + x + (y * SevenSegmentCell::CELL_COLUMNS)}_")
+      (0...SevenSegmentCell.cell_rows).each do |y|
+        (0...SevenSegmentCell.cell_columns).each do |x|
+          ret_cell.stub(:character_at_index).with(x,y).and_return("#{1 + x + (y * SevenSegmentCell.cell_columns)}_")
         end
       end
 

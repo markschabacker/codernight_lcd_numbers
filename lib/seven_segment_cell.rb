@@ -1,8 +1,4 @@
 class SevenSegmentCell
-  ## TODO: class members?
-  CELL_COLUMNS = 3
-  CELL_ROWS = 5
-
   @@horizontal_mappings = [[nil, SevenSegmentSegment.top, nil],
                            [nil, nil, nil],
                            [nil, SevenSegmentSegment.middle, nil],
@@ -23,5 +19,13 @@ class SevenSegmentCell
     return "-" if @seven_segment_character.has_segment?(@@horizontal_mappings[y][x])
     return "|" if @seven_segment_character.has_segment?(@@vertical_mappings[y][x])
     " "
+  end
+
+  def self.cell_columns
+    3
+  end
+
+  def self.cell_rows
+    5
   end
 end
