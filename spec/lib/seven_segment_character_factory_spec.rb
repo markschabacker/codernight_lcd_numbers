@@ -34,20 +34,20 @@ describe "The Seven Segment Character Factory" do
   end
 
   describe "Single Character Generation" do
-    it "returns SevenSegmentCharacterNil for an unknown character" do
-      character_factory.get_character("Z").should == SevenSegmentCharacter.charNil
+    it "returns SevenSegmentCharacters.charNil for an unknown character" do
+      character_factory.get_character("Z").should == SevenSegmentCharacters.charNil
     end
 
-    { "0" => SevenSegmentCharacter.char0,
-      "1" => SevenSegmentCharacter.char1,
-      "2" => SevenSegmentCharacter.char2,
-      "3" => SevenSegmentCharacter.char3,
-      "4" => SevenSegmentCharacter.char4,
-      "5" => SevenSegmentCharacter.char5,
-      "6" => SevenSegmentCharacter.char6,
-      "7" => SevenSegmentCharacter.char7,
-      "8" => SevenSegmentCharacter.char8,
-      "9" => SevenSegmentCharacter.char9}.each do |input_char, expected_seven_segment_char|
+    { "0" => SevenSegmentCharacters.char0,
+      "1" => SevenSegmentCharacters.char1,
+      "2" => SevenSegmentCharacters.char2,
+      "3" => SevenSegmentCharacters.char3,
+      "4" => SevenSegmentCharacters.char4,
+      "5" => SevenSegmentCharacters.char5,
+      "6" => SevenSegmentCharacters.char6,
+      "7" => SevenSegmentCharacters.char7,
+      "8" => SevenSegmentCharacters.char8,
+      "9" => SevenSegmentCharacters.char9}.each do |input_char, expected_seven_segment_char|
       it "returns #{expected_seven_segment_char} for #{input_char}" do
         character_factory.get_character(input_char).should == expected_seven_segment_char
       end
