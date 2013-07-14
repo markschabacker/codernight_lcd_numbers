@@ -9,6 +9,44 @@ describe "A SevenSegmentCharacter" do
     it "can be initialized with a list of segments" do
       SevenSegmentCharacter.new(:segments).should_not be_nil
     end
+
+    describe "string initialization" do
+      it "can be initialized with a string (nil)" do
+        input_string = \
+          "   "\
+          "   "\
+          "   "\
+          "   "\
+          "   "
+        char = SevenSegmentCharacter.initialize_from_string(input_string)
+
+        char.has_segment?(SevenSegmentSegment.top).should be_false
+        char.has_segment?(SevenSegmentSegment.top_left).should be_false
+        char.has_segment?(SevenSegmentSegment.top_right).should be_false
+        char.has_segment?(SevenSegmentSegment.middle).should be_false
+        char.has_segment?(SevenSegmentSegment.bottom_left).should be_false
+        char.has_segment?(SevenSegmentSegment.bottom_right).should be_false
+        char.has_segment?(SevenSegmentSegment.bottom).should be_false
+      end
+
+      it "can be initialized with a string (8)" do
+        input_string = \
+          " x "\
+          "x x"\
+          " x "\
+          "x x"\
+          " x "
+        char = SevenSegmentCharacter.initialize_from_string(input_string)
+
+        char.has_segment?(SevenSegmentSegment.top).should be_true
+        char.has_segment?(SevenSegmentSegment.top_left).should be_true
+        char.has_segment?(SevenSegmentSegment.top_right).should be_true
+        char.has_segment?(SevenSegmentSegment.middle).should be_true
+        char.has_segment?(SevenSegmentSegment.bottom_left).should be_true
+        char.has_segment?(SevenSegmentSegment.bottom_right).should be_true
+        char.has_segment?(SevenSegmentSegment.bottom).should be_true
+      end
+    end
   end
 
   describe "has_segment?" do

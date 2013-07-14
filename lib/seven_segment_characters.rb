@@ -2,16 +2,65 @@ require_relative 'seven_segment_character.rb'
 
 class SevenSegmentCharacters
   @@charNil = SevenSegmentCharacter.new
-  @@char0 = SevenSegmentCharacter.new([SevenSegmentSegment.top, SevenSegmentSegment.top_left, SevenSegmentSegment.top_right, SevenSegmentSegment.bottom_left, SevenSegmentSegment.bottom_right, SevenSegmentSegment.bottom])
-  @@char1 = SevenSegmentCharacter.new([SevenSegmentSegment.top_right, SevenSegmentSegment.bottom_right])
-  @@char2 = SevenSegmentCharacter.new([SevenSegmentSegment.top, SevenSegmentSegment.top_right, SevenSegmentSegment.middle, SevenSegmentSegment.bottom_left, SevenSegmentSegment.bottom])
-  @@char3 = SevenSegmentCharacter.new([SevenSegmentSegment.top, SevenSegmentSegment.top_right, SevenSegmentSegment.middle, SevenSegmentSegment.bottom_right, SevenSegmentSegment.bottom])
-  @@char4 = SevenSegmentCharacter.new([SevenSegmentSegment.top_left, SevenSegmentSegment.top_right, SevenSegmentSegment.middle, SevenSegmentSegment.bottom_right])
-  @@char5 = SevenSegmentCharacter.new([SevenSegmentSegment.top, SevenSegmentSegment.top_left, SevenSegmentSegment.middle, SevenSegmentSegment.bottom_right, SevenSegmentSegment.bottom])
-  @@char6 = SevenSegmentCharacter.new([SevenSegmentSegment.top, SevenSegmentSegment.top_left, SevenSegmentSegment.middle, SevenSegmentSegment.bottom_left, SevenSegmentSegment.bottom_right, SevenSegmentSegment.bottom])
-  @@char7 = SevenSegmentCharacter.new([SevenSegmentSegment.top, SevenSegmentSegment.top_right, SevenSegmentSegment.bottom_right])
-  @@char8 = SevenSegmentCharacter.new([SevenSegmentSegment.top, SevenSegmentSegment.top_left, SevenSegmentSegment.top_right, SevenSegmentSegment.middle, SevenSegmentSegment.bottom_left, SevenSegmentSegment.bottom_right, SevenSegmentSegment.bottom])
-  @@char9 = SevenSegmentCharacter.new([SevenSegmentSegment.top, SevenSegmentSegment.top_left, SevenSegmentSegment.top_right, SevenSegmentSegment.middle, SevenSegmentSegment.bottom_right, SevenSegmentSegment.bottom])
+  @@char0 = SevenSegmentCharacter.initialize_from_string("xxx"\
+                                                         "x x"\
+                                                         "x x"\
+                                                         "x x"\
+                                                         "xxx")
+
+  @@char1 = SevenSegmentCharacter.initialize_from_string("   "\
+                                                         "  x"\
+                                                         "  x"\
+                                                         "  x"\
+                                                         "   ")
+
+  @@char2 = SevenSegmentCharacter.initialize_from_string("xxx"\
+                                                         "  x"\
+                                                         "xxx"\
+                                                         "x  "\
+                                                         "xxx")
+
+  @@char3 = SevenSegmentCharacter.initialize_from_string("xxx"\
+                                                         "  x"\
+                                                         "xxx"\
+                                                         "  x"\
+                                                         "xxx")
+
+  @@char4 = SevenSegmentCharacter.initialize_from_string("   "\
+                                                         "x x"\
+                                                         "xxx"\
+                                                         "  x"\
+                                                         "   ")
+
+  @@char5 = SevenSegmentCharacter.initialize_from_string("xxx"\
+                                                         "x  "\
+                                                         "xxx"\
+                                                         "  x"\
+                                                         "xxx")
+
+  @@char6 = SevenSegmentCharacter.initialize_from_string("xxx"\
+                                                         "x  "\
+                                                         "xxx"\
+                                                         "x x"\
+                                                         "xxx")
+
+  @@char7 = SevenSegmentCharacter.initialize_from_string("xxx"\
+                                                         "  x"\
+                                                         "  x"\
+                                                         "  x"\
+                                                         "   ")
+
+  @@char8 = SevenSegmentCharacter.initialize_from_string("xxx"\
+                                                         "x x"\
+                                                         "xxx"\
+                                                         "x x"\
+                                                         "xxx")
+
+  @@char9 = SevenSegmentCharacter.initialize_from_string("xxx"\
+                                                         "x x"\
+                                                         "xxx"\
+                                                         "  x"\
+                                                         "xxx")
 
   def self.charNil
     @@charNil
