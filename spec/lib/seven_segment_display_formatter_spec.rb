@@ -13,13 +13,13 @@ describe "The Seven Segment Display Formatter" do
     end
   end
 
-  # TODO: these look like they're testing the specific implementation
+  # TODO: these tests smell like they're testing this specific implementation
   describe "formatting" do
-    let (:seven_segment_character_factory) { Object.new }
+    let (:seven_segment_character_factory) { double("char_factory") }
     let (:seven_segment_display_formatter) { SevenSegmentDisplayFormatter.new(seven_segment_character_factory) }
     let (:input_string) { :input_string }
     let (:multiplier) { 1 }
-    let (:doesnt_matter_char) { temp = Object.new; temp.stub(:character_at_index) { "" }; temp }
+    let (:doesnt_matter_char) { double(:character_at_index => "") }
 
     it "gets SevenSegmentCharacters from its SevenSegmentCharacterFactory " do
       ret_ssd_chars = []
@@ -50,7 +50,7 @@ describe "The Seven Segment Display Formatter" do
       ret_ssd_chars = [ :char_1 ]
       seven_segment_character_factory.stub(:get_characters).with(input_string).and_return(ret_ssd_chars)
 
-      ret_cell = Object.new
+      ret_cell = double("cell")
       SevenSegmentCell.stub(:new).with(:char_1).and_return(ret_cell)
 
       counter = 0
@@ -74,10 +74,10 @@ describe "The Seven Segment Display Formatter" do
       ret_ssd_chars = [ :char_1, :char_2 ]
       seven_segment_character_factory.stub(:get_characters).with(input_string).and_return(ret_ssd_chars)
 
-      ret_cell_1 = Object.new
+      ret_cell_1 = double("cell")
       SevenSegmentCell.stub(:new).with(:char_1).and_return(ret_cell_1)
 
-      ret_cell_2 = Object.new
+      ret_cell_2 = double("cell")
       SevenSegmentCell.stub(:new).with(:char_2).and_return(ret_cell_2)
 
       counter = 0
@@ -106,7 +106,7 @@ describe "The Seven Segment Display Formatter" do
       ret_ssd_chars = [ :char_1 ]
       seven_segment_character_factory.stub(:get_characters).with(input_string).and_return(ret_ssd_chars)
 
-      ret_cell = Object.new
+      ret_cell = double("cell")
       SevenSegmentCell.stub(:new).with(:char_1).and_return(ret_cell)
 
       (0...SevenSegmentCell.cell_rows).each do |y|

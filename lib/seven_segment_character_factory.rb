@@ -14,6 +14,7 @@ class SevenSegmentCharacterFactory
     @char_mappings["8"] = SevenSegmentCharacters.char8
     @char_mappings["9"] = SevenSegmentCharacters.char9
   end
+
   def get_characters(input_string)
     input_string.split("").map do |char_token|
       self.get_character(char_token)

@@ -14,12 +14,10 @@ class SevenSegmentDisplayFormatter
 
     output = ""
     (0...SevenSegmentCell.cell_rows).each do |y|
-      column_multiplier = use_multiplier_for_row(y) ? multiplier : 1
-      1.upto(column_multiplier).each do
+      multiplier_for_row(y, multiplier).times do
         cells.each_with_index do |cell, index|
           (0...SevenSegmentCell.cell_columns).each do |x|
-            row_multiplier = use_multiplier_for_column(x) ? multiplier : 1
-            1.upto(row_multiplier).each do
+            multiplier_for_column(x, multiplier).times do
               output << cell.character_at_index(x,y)
             end
           end
@@ -33,10 +31,18 @@ class SevenSegmentDisplayFormatter
 
 private
   def use_multiplier_for_column(column)
-    return column == 1
+    column == 1
+  end
+
+  def multiplier_for_column(column, multiplier)
+    use_multiplier_for_column(column) ? multiplier : 1
+  end
+
+  def multiplier_for_row(row, multiplier)
+    use_multiplier_for_row(row) ? multiplier : 1
   end
 
   def use_multiplier_for_row(row)
-    return (row == 1) || (row == 3)
+    (row == 1) || (row == 3)
   end
 end

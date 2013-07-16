@@ -1,16 +1,7 @@
+require_relative 'seven_segment_character.rb'
+require_relative 'seven_segment_segment.rb'
+
 class SevenSegmentCell
-  @@horizontal_mappings = [[nil, SevenSegmentSegment.top, nil],
-                           [nil, nil, nil],
-                           [nil, SevenSegmentSegment.middle, nil],
-                           [nil, nil, nil],
-                           [nil, SevenSegmentSegment.bottom, nil]]
-
-  @@vertical_mappings = [[nil, nil, nil],
-                         [SevenSegmentSegment.top_left, nil, SevenSegmentSegment.top_right],
-                         [nil, nil, nil],
-                         [SevenSegmentSegment.bottom_left, nil, SevenSegmentSegment.bottom_right],
-                         [nil, nil, nil]]
-
   def initialize(seven_segment_character)
     @seven_segment_character = seven_segment_character
   end
@@ -28,4 +19,17 @@ class SevenSegmentCell
   def self.cell_rows
     5
   end
+
+private
+  @@horizontal_mappings = [[nil, SevenSegmentSegment.top, nil],
+                           [nil, nil, nil],
+                           [nil, SevenSegmentSegment.middle, nil],
+                           [nil, nil, nil],
+                           [nil, SevenSegmentSegment.bottom, nil]]
+
+  @@vertical_mappings = [[nil, nil, nil],
+                         [SevenSegmentSegment.top_left, nil, SevenSegmentSegment.top_right],
+                         [nil, nil, nil],
+                         [SevenSegmentSegment.bottom_left, nil, SevenSegmentSegment.bottom_right],
+                         [nil, nil, nil]]
 end

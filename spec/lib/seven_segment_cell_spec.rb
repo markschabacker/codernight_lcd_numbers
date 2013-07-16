@@ -1,11 +1,7 @@
 require_relative '../spec_helper.rb'
 
 describe "Seven Segment Cells" do
-  let (:seven_segment_character) {
-    char = Object.new
-    char.stub(:has_segment?) { false }
-    char
-  }
+  let (:seven_segment_character) { double("char", :has_segment? => false) }
   let (:cell) { SevenSegmentCell.new(seven_segment_character) }
 
   it "is instantiated with a SevenSegmentCharacter" do
@@ -16,6 +12,7 @@ describe "Seven Segment Cells" do
     (0...SevenSegmentCell.cell_columns).each do |x|
       (0...SevenSegmentCell.cell_rows).each do |y|
         it "returns ' ' if the character does not have any segments (#{x}, #{y})" do
+          seven_segment_character.stub(:has_segment?) { false }
           cell.character_at_index(x, y).should == " "
         end
       end
