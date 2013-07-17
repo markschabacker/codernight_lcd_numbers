@@ -12,24 +12,25 @@ class SevenSegmentDisplayFormatter
       SevenSegmentCell.new(char)
     end
 
-    output = ""
-    (0...SevenSegmentCell.cell_rows).each do |y|
-      multiplier_for_row(y, multiplier).times do
-        cells.each_with_index do |cell, index|
-          (0...SevenSegmentCell.cell_columns).each do |x|
-            multiplier_for_column(x, multiplier).times do
-              output << cell.character_at_index(x,y)
-            end
-          end
-          output << " " if index < (cells.count - 1)
-        end
-        output << "\n"
-      end
+    (0...SevenSegmentCell.cell_rows).inject("") do |output, row|
+      output << (get_line(cells, row, multiplier) + "\n") * multiplier_for_row(row, multiplier)
     end
-    output
   end
 
 private
+  def get_line(cells, row, multiplier)
+    cells.inject("") do |line_output, cell|
+      line_output << " " unless line_output.empty?
+      line_output << get_cell_row(cell, row, multiplier)
+    end
+  end
+
+  def get_cell_row(cell, row, multiplier)
+    (0...SevenSegmentCell.cell_columns).inject("") do |cell_output, column|
+      cell_output << cell.character_at_index(column, row) * multiplier_for_column(column, multiplier)
+    end
+  end
+
   def use_multiplier_for_column(column)
     column == 1
   end
